@@ -7,6 +7,16 @@
 - 电脑端：C# / .NET 10，单个 exe，HTTP + WebSocket 服务
 - 手机端：PWA（一个网页，可“添加到主屏幕”，不用装 APK）
 
+## 截图
+
+| 手机端按钮页 | 一页里按钮 + 状态模块混排 |
+|---|---|
+| ![手机按钮页](docs/phone-hud.png) | ![混排](docs/mixed.png) |
+
+| 电脑端管理页 | 托盘图标弹出的状态窗口 |
+|---|---|
+| ![管理页](docs/admin-board.png) | ![状态窗口](docs/status-window.png) |
+
 ---
 
 ## 1. 怎么启动
