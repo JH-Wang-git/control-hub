@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no">
+<meta name="theme-color" content="#0b0f14">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>控制台</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/icon-192.png">
+<link rel="apple-touch-icon" href="/icon-192.png">
+<link rel="stylesheet" href="/style.css?v=2.1">
+</head>
+<body>
+
+<div id="bg"></div>
+<div id="scrim"></div>
+
+<main>
+  <div id="grid"></div>
+  <section id="status" class="status hidden"></section>
+</main>
+
+<footer>
+  <div id="tabs"></div>
+  <div id="hud">
+    <span class="pill apppill">
+      <span id="dot" class="dot off"></span>
+      <span id="appLine" class="al">正在连接电脑…</span>
+    </span>
+    <button id="autoBtn" class="pill auto on" title="自动切页">自动</button>
+    <a id="gear" class="pill auto gear" href="/admin.html" target="_blank" title="管理">⚙</a>
+  </div>
+</footer>
+
+<div id="toast" class="toast"></div>
+
+<div id="modal" class="modal hidden">
+  <div class="modal-card">
+    <div class="modal-title" id="modalTitle">输入内容</div>
+    <textarea id="modalInput" rows="3" placeholder="将要在电脑上输入的文字" spellcheck="false"></textarea>
+    <div class="modal-actions">
+      <button id="modalCancel" class="mbtn ghost">取消</button>
+      <button id="modalOk" class="mbtn primary">发送</button>
+    </div>
+  </div>
+</div>
+
+<div id="cover">
+  <div class="cover-box">
+    <div class="cover-icon">🔗</div>
+    <h1>需要访问令牌</h1>
+    <p>请在电脑上运行 ControlHub，然后用它打印出来的完整地址访问，例如：</p>
+    <code>http://192.168.1.10:8080/?t=abc123</code>
+  </div>
+</div>
+
+<script src="/app.js?v=2.1"></script>
+</body>
+</html>

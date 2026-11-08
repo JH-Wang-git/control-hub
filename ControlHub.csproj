@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>ControlHub</AssemblyName>
+    <RootNamespace>ControlHub</RootNamespace>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <InvariantGlobalization>false</InvariantGlobalization>
+    <ApplicationIcon>ControlHub.ico</ApplicationIcon>
+    <OutputType>WinExe</OutputType>
+    <UseWindowsForms>true</UseWindowsForms>
+    <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
+    <!-- tests/ 下是独立的验证小程序，不参与主项目编译 -->
+    <DefaultItemExcludes>$(DefaultItemExcludes);tests\**</DefaultItemExcludes>
+    <!-- config/ 是用户自己的配置（含上传的图片），既不打进程序，也不随发布复制 -->
+    <DefaultItemExcludes>$(DefaultItemExcludes);config\**</DefaultItemExcludes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- 双保险：即便默认 glob 抓到，也一律排除 -->
+    <Content Remove="config\**" />
+    <None Remove="config\**" />
+    <Compile Remove="config\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- 读 GPU / CPU 温度与负载（状态页用） -->
+    <PackageReference Include="LibreHardwareMonitorLib" Version="0.9.6" />
+  </ItemGroup>
+
+</Project>
